@@ -2467,9 +2467,9 @@ Swiper.prototype = {
 
         // passed all coordinates
         if (arguments.length == 3) {
-            coords.x = x;
-            coords.y = y;
-            coords.z = z;
+            coords.x = parseInt(x);
+            coords.y = parseInt(y);
+            coords.z = parseInt(z);
         }
         
         // passed one coordinate and optional axis
@@ -2477,7 +2477,7 @@ Swiper.prototype = {
             if (typeof y == 'undefined') {
                 y = this.params.mode == 'horizontal' ? 'x' : 'y';
             }
-            coords[y] = x;
+            coords[y] = parseInt(x);
         }
 
         if (this.support.transforms && this.params.useCSS3Transforms) {
